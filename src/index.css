@@ -1,0 +1,347 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-950 text-slate-100 antialiased;
+}
+
+
+@keyframes soft-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-soft-marquee {
+  animation: soft-marquee 12s linear infinite;
+}
+
+@keyframes soft-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-soft-marquee {
+  animation: soft-marquee 24s linear infinite;
+}
+
+@keyframes soft-rotate-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-soft-rotate {
+  animation: soft-rotate-fade 0.8s ease-out;
+}
+
+
+/* hero background: gradient + subtle grid */
+.hero-bg {
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 60%),
+    radial-gradient(circle at bottom right, rgba(168, 85, 247, 0.18), transparent 55%),
+    #020617;
+  position: relative;
+}
+
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background-image:
+    linear-gradient(to right, rgba(15, 23, 42, 0.6) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.6) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.5;
+  mix-blend-mode: soft-light;
+}
+
+/* slow rotating orbit */
+@keyframes orbit-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-orbit-slow {
+  animation: orbit-slow 26s linear infinite;
+}
+
+
+/* ======= SKILLS ORBIT (center of hero, from Vamshi design) ======= */
+
+.skills-container {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  overflow: visible;
+}
+
+/* static SKILLS text */
+.skills-center-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #e5f3ff;
+  font-weight: 950;
+  font-style: bold;
+  font-size: 28px;
+  letter-spacing: 0.45em;
+  z-index: 10;
+  text-transform: uppercase;
+  animation: skills-glow 3s ease-in-out infinite;
+}
+
+@keyframes skills-glow {
+  0% {
+    opacity: 0.4;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 28px rgba(56, 189, 248, 0.9);
+  }
+  100% {
+    opacity: 0.4;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+  }
+}
+
+/* circles (groups) */
+.skills-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.skills-circle-inner {
+  width: 250px;
+  height: 250px;
+  border: 2px dashed rgba(148, 163, 184, 0.6);
+  animation: skills-spin-inner 12s linear infinite;
+}
+
+.skills-circle-outer {
+  width: 400px;
+  height: 400px;
+  border: 2px dashed rgba(148, 163, 184, 0.6);
+  animation: skills-spin-outer 27s linear infinite;
+}
+
+@keyframes skills-spin-inner {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes skills-spin-outer {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* skill bubbles */
+.skills-dot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 30% 10%, #1f2937, #020617);
+  box-shadow:
+    0 0 0 2px rgba(15, 23, 42, 0.9),
+    0 0 20px rgba(37, 99, 235, 0.7);
+  transition:
+    transform 0.25s ease-out,
+    box-shadow 0.25s ease-out,
+    background 0.25s ease-out;
+  cursor: default;
+  color: #e5f3ff;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.skills-dot-inner,
+.skills-dot-outer {
+  width: 40px;
+  height: 40px;
+}
+
+.skills-dot:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: radial-gradient(circle at 20% 0%, #0ea5e9, #020617);
+  box-shadow:
+    0 0 0 2px rgba(56, 189, 248, 0.9),
+    0 0 26px rgba(56, 189, 248, 0.9);
+}
+
+.nav-logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.nav-logo span {
+  color: #38bdf8;
+}
+
+/* ===== LIGHT THEME TWEAKS ===== */
+
+body.theme-light {
+  background-color: #f9fafb;
+  color: #0f172a;
+}
+
+/* Make all “slate” text much darker in light mode */
+body.theme-light .text-slate-50,
+body.theme-light .text-slate-100,
+body.theme-light .text-slate-200 {
+  color: #020617; /* near-black */
+}
+
+body.theme-light .text-slate-300,
+body.theme-light .text-slate-400,
+body.theme-light .text-slate-500 {
+  color: #1f2933; /* readable gray */
+}
+
+/* Experience year / headings that were too faint */
+body.theme-light .text-slate-400 {
+  color: #4b5563;
+}
+
+/* Cards / panels that used dark backgrounds – lighten them a bit */
+body.theme-light .bg-slate-900\/70,
+body.theme-light .bg-slate-900\/80 {
+  background-color: #e5e7ebee; /* light gray card */
+}
+
+body.theme-light .border-slate-800,
+body.theme-light .border-slate-700 {
+  border-color: #cbd5f5;
+}
+
+/* Timeline vertical line */
+body.theme-light .bg-slate-800 {
+  background-color: #cbd5f5;
+}
+
+/* Optional: About-section image frame so it doesn't look too dark */
+body.theme-light .border-slate-700 {
+  border-color: #94a3b8;
+}
+
+/* SKILLS center label – make it visible in light mode */
+body.theme-light .skills-center-text {
+  color: #0f172a;       
+  text-shadow: 0 0 8px rgba(148, 163, 184, 0.6),
+               0 0 18px rgba(148, 163, 184, 0.8);
+  mix-blend-mode: normal;
+  opacity: 0.95;         
+}
+
+.wave-hand {
+  display: inline-block;
+  transform-origin: 70% 70%;
+}
+
+/* wave animation */
+@keyframes wave {
+  0%   { transform: rotate(0deg); }
+  15%  { transform: rotate(16deg); }
+  30%  { transform: rotate(-10deg); }
+  45%  { transform: rotate(14deg); }
+  60%  { transform: rotate(-6deg); }
+  75%  { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.wave-hand.wave {
+  animation: wave 0.9s ease-in-out;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.hero {
+  padding: 80px 80px 60px;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); /* text : orbit */
+  align-items: center;
+  column-gap: 2.5rem; /* <<< reduce or increase this to control space */
+}
+
+.hero-left {
+  max-width: 560px; /* keeps text from stretching too wide */
+}
+
+.hero-right {
+  display: flex;
+  justify-content: center;
+}
+
+.skills-orbit {
+  /* optional: make the circle a bit smaller if needed */
+  transform: scale(0.9);
+}
+
+/* 👋 wave animation */
+.wave-hand {
+  display: inline-block;
+  transform-origin: 70% 70%;
+}
+
+.wave {
+  animation: wave 0.9s ease-in-out;
+}
+
+@keyframes wave {
+  0%   { transform: rotate(0deg); }
+  15%  { transform: rotate(16deg); }
+  30%  { transform: rotate(-10deg); }
+  45%  { transform: rotate(14deg); }
+  60%  { transform: rotate(-6deg); }
+  75%  { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
