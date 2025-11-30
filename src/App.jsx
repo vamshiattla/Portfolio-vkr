@@ -291,10 +291,7 @@ function Intro({ onDone }) {
     >
       <div ref={containerRef} className="w-full h-full" />
       <div className="pointer-events-none absolute bottom-12 left-1/2 -translate-x-1/2 text-center text-xs md:text-sm tracking-[0.18em] text-slate-300 uppercase">
-        Click anywhere to enter
-        <span className="block mt-1 text-[10px] text-slate-500">
-          Particles morph into VKR after 5 seconds
-        </span>
+        Click to enter
       </div>
     </div>
   );
@@ -566,25 +563,25 @@ function SkillsOrbit() {
 
   useEffect(() => {
     const innerSkillsData = [
-      { src: "src/assets/icons/react.svg", alt: "React" },
-      { src: "src/assets/icons/docker.svg", alt: "Docker" },
-      { src: "src/assets/icons/javascript.svg", alt: "JavaScript" },
-      { src: "src/assets/icons/node.svg", alt: "Node.js" },
-      { src: "src/assets/icons/spring.svg", alt: "Spring" },
-      { src: "src/assets/icons/mysql.svg", alt: "MySQL" },
+      { src: "public/icons/react.svg", alt: "React" },
+      { src: "public/icons/docker.svg", alt: "Docker" },
+      { src: "public/icons/javascript.svg", alt: "JavaScript" },
+      { src: "public/icons/node.svg", alt: "Node.js" },
+      { src: "public/icons/spring.svg", alt: "Spring" },
+      { src: "public/icons/mysql.svg", alt: "MySQL" },
     ];
 
     const outerSkillsData = [
-      { src: "src/assets/icons/aws.svg", alt: "AWS" },
-      { src: "src/assets/icons/kubernets.svg", alt: "Kubernets" },
-      { src: "src/assets/icons/mongodb.svg", alt: "MongoDB" },
-      { src: "src/assets/icons/linux.svg", alt: "Linux" },
-      { src: "src/assets/icons/github.svg", alt: "GitHub" },
-      { src: "src/assets/icons/snowflake.svg", alt: "SnowFlake" },
-      { src: "src/assets/icons/java.svg", alt: "Java" },
-      { src: "src/assets/icons/python.svg", alt: "Python" },
-      { src: "src/assets/icons/postgresql.svg", alt: "PostgreSQL" },
-      { src: "src/assets/icons/powerbi.svg", alt: "PowerBi" },
+      { src: "public/icons/aws.svg", alt: "AWS" },
+      { src: "public/icons/kubernets.svg", alt: "Kubernets" },
+      { src: "public/icons/mongodb.svg", alt: "MongoDB" },
+      { src: "public/icons/linux.svg", alt: "Linux" },
+      { src: "public/icons/github.svg", alt: "GitHub" },
+      { src: "public/icons/snowflake.svg", alt: "SnowFlake" },
+      { src: "public/icons/java.svg", alt: "Java" },
+      { src: "public/icons/python.svg", alt: "Python" },
+      { src: "public/icons/postgresql.svg", alt: "PostgreSQL" },
+      { src: "public/icons/powerbi.svg", alt: "PowerBi" },
     ];
 
     const createDots = (skills, circleEl, extraClass) => {
