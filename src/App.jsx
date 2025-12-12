@@ -563,25 +563,25 @@ function SkillsOrbit() {
 
   useEffect(() => {
     const innerSkillsData = [
-      { src: "/icons/react.svg", alt: "React" },
-      { src: "/icons/docker.svg", alt: "Docker" },
-      { src: "/icons/javascript.svg", alt: "JavaScript" },
-      { src: "/icons/node.svg", alt: "Node.js" },
-      { src: "/icons/spring.svg", alt: "Spring" },
-      { src: "/icons/mysql.svg", alt: "MySQL" },
+      { src: "icons/react.svg", alt: "React" },
+      { src: "icons/docker.svg", alt: "Docker" },
+      { src: "icons/javascript.svg", alt: "JavaScript" },
+      { src: "icons/node.svg", alt: "Node.js" },
+      { src: "icons/spring.svg", alt: "Spring" },
+      { src: "icons/mysql.svg", alt: "MySQL" },
     ];
 
     const outerSkillsData = [
-      { src: "/icons/aws.svg", alt: "AWS" },
-      { src: "/icons/kubernets.svg", alt: "Kubernets" },
-      { src: "/icons/mongodb.svg", alt: "MongoDB" },
-      { src: "/icons/linux.svg", alt: "Linux" },
-      { src: "/icons/github.svg", alt: "GitHub" },
-      { src: "/icons/snowflake.svg", alt: "SnowFlake" },
-      { src: "/icons/java.svg", alt: "Java" },
-      { src: "/icons/python.svg", alt: "Python" },
-      { src: "/icons/postgresql.svg", alt: "PostgreSQL" },
-      { src: "/icons/powerbi.svg", alt: "PowerBi" },
+      { src: "icons/aws.svg", alt: "AWS" },
+      { src: "icons/kubernets.svg", alt: "Kubernets" },
+      { src: "icons/mongodb.svg", alt: "MongoDB" },
+      { src: "icons/linux.svg", alt: "Linux" },
+      { src: "icons/github.svg", alt: "GitHub" },
+      { src: "icons/snowflake.svg", alt: "SnowFlake" },
+      { src: "icons/java.svg", alt: "Java" },
+      { src: "icons/python.svg", alt: "Python" },
+      { src: "icons/postgresql.svg", alt: "PostgreSQL" },
+      { src: "icons/powerbi.svg", alt: "PowerBi" },
     ];
 
     const createDots = (skills, circleEl, extraClass) => {
@@ -818,6 +818,32 @@ function ProjectRow({
 /* ============== DATA ARRAYS ============== */
 
 const projects = [
+    {
+    company: "EmojiHub – Emoji Search, Copy & Collections",
+    role: "Frontend Developer",
+    period: "Dec 2025",
+    bullets: [
+      "Built a fast, user-friendly emoji hub that lets users search, filter, and instantly copy emojis with a clean, responsive UI.",
+      "Developed the UI using React with reusable components (emoji grid, search bar, category filters, and emoji detail popups) optimized for smooth browsing across devices.",
+      "Implemented smart search and filtering (keyword match, categories, recent emojis, and favorites) with local storage persistence for a personalized experience.",
+      "Designed a modern dashboard-style UX with dark/light mode, polished cards, quick actions (copy, favorite), and accessibility-friendly interactions for daily use.",
+    ],
+    demoUrl: "https://emojihubs.vercel.app/",
+    codeUrl: "https://github.com/vamshiattla/Emoji-hub"
+  },
+  {
+    company: "XChangeHub – Real-Time FX Dashboard & Smart Currency Tools",
+    role: "Frontend / GenAI/FINTECH",
+    period: "Dec 2025",
+    bullets: [
+      "Built a full-featured currency intelligence platform that delivers real-time exchange rates, interactive charts, profile management, and secure authentication across devices.",
+      "Engineered a React + TypeScript interface with live daily FX rate fetching, smart quick-conversion logic, interactive multi-range charts, and responsive UI components modeled after enterprise-grade FX tools.",
+      "Implemented Firebase Auth for secure email/Google login, real-session tracking, geolocation-based device activity logs, profile editing, and user-specific alerts with seamless state sync across the app.",
+      "Designed a modern UX with dark/light modes, polished card layouts, form wizards, animated interactions, and a high-fidelity dashboard experience optimized for speed, clarity, and accessibility.",
+    ],
+    demoUrl: "https://x-change-hub.vercel.app/",
+    codeUrl: "https://github.com/vamshikrishna55/XChange-Hub",
+  },
   {
     company: "AI Chess Coach & Tactics Board",
     role: "Frontend / GenAI",
